@@ -1,5 +1,3 @@
-![Pastel Pink Banner](https://capsule-render.vercel.app/api?type=rect&color=FCEEF3&height=100&section=header)
-
 # Hi, I'm Srinidhi! 👋
 
 **Statistics student @ University of Washington** 🎓
@@ -8,9 +6,9 @@
 
 🌷 Interested in discovering patterns, building machine learning models, and making complex data easier to understand.
 
-![Statistics](https://img.shields.io/badge/Statistics-E8DDF5?style=flat-square&labelColor=E8DDF5&color=E8DDF5)
-![Machine Learning](https://img.shields.io/badge/Machine%20Learning-F8DFE8?style=flat-square&labelColor=F8DFE8&color=F8DFE8)
-![Data Visualization](https://img.shields.io/badge/Data%20Visualization-E2F0E8?style=flat-square&labelColor=E2F0E8&color=E2F0E8)
+![Statistics](https://img.shields.io/badge/Statistics-E8DDF5?style=flat-square)
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-F8DFE8?style=flat-square)
+![Data Visualization](https://img.shields.io/badge/Data%20Visualization-E2F0E8?style=flat-square)
 
 ### ✿ A little about me
 

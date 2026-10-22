@@ -19,7 +19,9 @@ I enjoy turning complex data into meaningful insights through statistical analys
 ### 🌸 Let's Connect!
 
 [![Email](https://img.shields.io/badge/Email-Say%20Hello-F2B8C6?style=for-the-badge&logo=gmail&logoColor=7A3E52)](mailto:srinidhi.murali24@gmail.com)
+
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-C5B8E8?style=for-the-badge&logo=linkedin&logoColor=4B3F72)](https://www.linkedin.com/in/srinidhimuralidharan24)
+
 [![GitHub Projects](https://img.shields.io/badge/GitHub-My%20Projects-B8D8D0?style=for-the-badge&logo=github&logoColor=355E57)](https://github.com/YOUR_USERNAME?tab=repositories)
 
-*♡ Always happy to connect and talk about data, statistics, and machine learning!*
+*♡ Always happy to connect and talk about anything statistics!*

@@ -5,7 +5,7 @@
 
 <br>
 
-<h2>Statistics Student @ University of Washington 🎓</h2>
+<h2>Statistics Student @ University of Washington </h2>
 
 <h3>📊 Turning data into stories, one pattern at a time.</h3>
 

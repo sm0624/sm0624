@@ -1,15 +1,23 @@
-![Hi, I'm Srinidhi](https://capsule-render.vercel.app/api?type=rounded&color=EDE3FF&height=130&section=header&text=Hi,%20I'm%20Srinidhi!%20%F0%9F%91%8B&fontSize=32&fontColor=594477)
 
-<p align="center">
-  <strong>Statistics Student @ University of Washington</strong> 🎓
-  <br><br>
-  📊 Turning data into stories, one pattern at a time.
-  <br><br>
-  <a href="#"><img src="https://img.shields.io/badge/Statistics-E8DDF5?style=flat-square" /></a>&nbsp;
-  <a href="#"><img src="https://img.shields.io/badge/Machine%20Learning-F8DFE8?style=flat-square&logo=brain&logoColor=7A3E52" /></a>&nbsp;
-  <a href="#"><img src="https://img.shields.io/badge/Data%20Visualization-E2F0E8?style=flat-square" /></a>
-</p>
+<div align="center">
 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=EDE3FF&height=150&section=header&text=Srinidhi's%20Portfolio&fontSize=48&fontColor=594477&fontAlignY=55&desc=&animation=fadeIn" width="100%" />
+
+<br>
+
+<h2>Statistics Student @ University of Washington 🎓</h2>
+
+<h3>📊 Turning data into stories, one pattern at a time.</h3>
+
+<br>
+
+<img src="https://img.shields.io/badge/Statistics-E8DDF5?style=for-the-badge&labelColor=E8DDF5&color=E8DDF5" height="65" />
+&nbsp;
+<img src="https://img.shields.io/badge/🧠_Machine_Learning-F8DFE8?style=for-the-badge&labelColor=F8DFE8&color=F8DFE8" height="65" />
+&nbsp;
+<img src="https://img.shields.io/badge/Data_Visualization-E2F0E8?style=for-the-badge&labelColor=E2F0E8&color=E2F0E8" height="65" />
+
+</div>
 
 
 # 🌷 Srinidhi's Projects

@@ -1,4 +1,4 @@
-# srinidhi-data-portfolio
+# My Project Portfolio
 
 # Hi, I'm a Statistics Student at the University of Washington 👋
 

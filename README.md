@@ -1,6 +1,5 @@
 # srinidhi-data-portfolio
-My portfolio of Statistics, data analytics, and machine learning projects!
-z
+
 # Hi, I'm a Statistics Student at the University of Washington 👋
 
 I'm an undergraduate Statistics student interested in data analytics, machine learning, and statistical modeling. I enjoy using data to uncover patterns, solve problems, and communicate insights through clear visualizations.

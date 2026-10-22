@@ -1,7 +1,7 @@
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=EDE3FF&height=150&section=header&text=Srinidhi's%20Portfolio&fontSize=48&fontColor=594477&fontAlignY=55&desc=&animation=fadeIn" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=rect&color=EDE3FF&height=150&section=header&text=Srinidhi%20Muralidharan&fontSize=48&fontColor=594477&fontAlignY=55&desc=&animation=fadeIn" width="100%" />
 
 <br>
 
@@ -20,7 +20,7 @@
 </div>
 
 
-# 🌷 Srinidhi's Projects
+## My Projects
 
 ### 🌎 Climate ML & Methane Modeling
 Exploring autoencoders and machine learning for climate data.

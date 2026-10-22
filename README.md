@@ -3,6 +3,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Statistics-E8DDF5?style=flat-square" alt="Statistics" />
   <img src="https://img.shields.io/badge/Machine%20Learning-F8DFE8?style=flat-square" alt="Machine Learning" />
+  
   <img src="https://img.shields.io/badge/Data%20Visualization-E2F0E8?style=flat-square" alt="Data Visualization" />
 </p>
 

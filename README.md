@@ -16,10 +16,10 @@ I enjoy turning complex data into meaningful insights through statistical analys
 - **Geospatial Machine Learning** — Applying computer vision to detect and map glacial landforms.
 - **Statistical Data Analysis** — Exploring datasets and communicating findings through statistical methods and visualizations.
 
-### 🌷 Let's Connect!
+### 🌸 Let's Connect!
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Let's%20Connect-C5B8E8?style=for-the-badge&logo=linkedin&logoColor=4B3F72)](https://www.linkedin.com/in/srinidhimuralidharan24)
 [![Email](https://img.shields.io/badge/Email-Say%20Hello-F2B8C6?style=for-the-badge&logo=gmail&logoColor=7A3E52)](mailto:srinidhi.murali24@gmail.com)
-[![GitHub](https://img.shields.io/badge/GitHub-My%20Projects-B8D8D0?style=for-the-badge&logo=github&logoColor=355E57)](https://github.com/YOUR_USERNAME)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-C5B8E8?style=for-the-badge&logo=linkedin&logoColor=4B3F72)](https://www.linkedin.com/in/srinidhimuralidharan24)
+[![GitHub Projects](https://img.shields.io/badge/GitHub-My%20Projects-B8D8D0?style=for-the-badge&logo=github&logoColor=355E57)](https://github.com/YOUR_USERNAME?tab=repositories)
 
-*♡ Always happy to connect with people in data analytics, statistics, and machine learning!*
+*♡ Always happy to connect and talk about data, statistics, and machine learning!*

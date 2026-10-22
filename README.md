@@ -21,6 +21,7 @@
 </table>
 
 </div>
+
 ### ✿ A little about me
 
 - 📈 I enjoy finding patterns and turning data into meaningful insights.

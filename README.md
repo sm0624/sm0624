@@ -1,4 +1,4 @@
-[![Pastel Banner](https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,12,20&height=140&section=header&text=hello,%20world!%20%E2%9C%BF&fontSize=38&fontColor=ffffff&fontAlignY=50)](https://github.com/YOUR_USERNAME)
+![Pastel Pink Banner](https://capsule-render.vercel.app/api?type=rect&color=FCEEF3&height=100&section=header)
 
 # Hi, I'm Srinidhi! 👋
 
@@ -8,19 +8,15 @@
 
 🌷 Interested in discovering patterns, building machine learning models, and making complex data easier to understand.
 
-<p>
-  <img src="https://img.shields.io/badge/Statistics-C5B8E8?style=flat-square&logoColor=48375C" alt="Statistics" />
-  <img src="https://img.shields.io/badge/Machine%20Learning-F2B8C6?style=flat-square&logoColor=7A3E52" alt="Machine Learning" />
-  <img src="https://img.shields.io/badge/Data%20Visualization-B8D8D0?style=flat-square&logoColor=355E57" alt="Data Visualization" />
-</p>
-
----
+![Statistics](https://img.shields.io/badge/Statistics-E8DDF5?style=flat-square&labelColor=E8DDF5&color=E8DDF5)
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-F8DFE8?style=flat-square&labelColor=F8DFE8&color=F8DFE8)
+![Data Visualization](https://img.shields.io/badge/Data%20Visualization-E2F0E8?style=flat-square&labelColor=E2F0E8&color=E2F0E8)
 
 ### ✿ A little about me
 
-- 📈 I love finding patterns in data and turning them into meaningful insights.
-- 🤖 Currently working with machine learning and climate data.
-- 🎨 I enjoy the creative side of data visualization and storytelling.
+- 📈 I enjoy finding patterns and turning data into meaningful insights.
+- 🤖 I'm working with machine learning, climate data, and statistical modeling.
+- 🎨 I love the creative side of data visualization and storytelling.
 
 ### 🛠️ My Toolkit
 
@@ -34,16 +30,11 @@
 
 ### 🚀 Featured Projects
 
-🌎 **Climate ML & Methane Modeling**  
-Using autoencoders and statistical methods to model climate data.
+🌎 **Climate ML & Methane Modeling** — Using machine learning to model climate data.
 
-🧊 **Geospatial Machine Learning**  
-Applying computer vision to detect and map glacial landforms.
+🧊 **Geospatial Machine Learning** — Detecting glacial landforms with computer vision.
 
-📊 **Statistical Data Analysis**  
-Exploring datasets and communicating findings through statistics and visualization.
-
----
+📊 **Statistical Data Analysis** — Exploring data and communicating insights.
 
 ### 🌸 Let's Connect!
 

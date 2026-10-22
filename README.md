@@ -1,10 +1,11 @@
 # My Project Portfolio
 
-# Hi, I'm a Statistics Student at the University of Washington 👋
+# Hi, I'm Srinidhi!
+📊 Statistics & Data Science Student at the University of Washington
 
-I'm an undergraduate Statistics student interested in data analytics, machine learning, and statistical modeling. I enjoy using data to uncover patterns, solve problems, and communicate insights through clear visualizations.
+I enjoy turning complex data into meaningful insights through statistical analysis, machine learning, and data visualization. I'm always curious about new ways to use data to solve problems and tell a story.
 
-## Technical Skills
+## 🛠️ Technical Skills
 - **Languages:** Python, R, SQL
 - **Data Analysis:** Pandas, NumPy, tidyverse
 - **Machine Learning:** scikit-learn, PyTorch, Autoencoders, Computer Vision
@@ -15,5 +16,12 @@ I'm an undergraduate Statistics student interested in data analytics, machine le
 - **Geospatial Machine Learning** — Applying computer vision to detect and map glacial landforms.
 - **Statistical Data Analysis** — Exploring datasets and communicating findings through statistical methods and visualizations.
 
-## Connect with Me
-- [LinkedIn](www.linkedin.com/in/srinidhimuralidharan24)
+### 🤝 Let's Connect!
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/srinidhimuralidharan24)
+
+[![Email](https://img.shields.io/badge/Email-Contact%20Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:srinidhi.murali24@gmail.com)
+
+[![GitHub](https://img.shields.io/badge/GitHub-My%20Projects-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/YOUR_USERNAME)
+
+*Always happy to connect with people in data analytics, statistics, and machine learning!*

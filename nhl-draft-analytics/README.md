@@ -19,6 +19,11 @@ Analyzed NHL draft and player performance data to investigate how birth month, p
 - Found that physical attributes appeared more related to draft position than to subsequent NHL success.
 - Examined how junior-league scoring and playing position related to professional outcomes.
 
+### A Cool Visualization I made!
+
+<img width="867" height="475" alt="Screenshot 2026-10-22 at 4 48 25 PM" src="https://github.com/user-attachments/assets/2ec7d677-a3a4-4977-acc4-8fdfda2d3b29" />
+
+
 ### Project Materials
 - [Project Report](nhl-draft-analytics-report.pdf)
 - [Presentation Slides](nhl-draft-analytics-slides.pdf)

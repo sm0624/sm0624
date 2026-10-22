@@ -22,20 +22,19 @@
 
 ## About Me
 
-I'm a Statistics student at the University of Washington interested in data analytics, machine learning, and data visualization. I enjoy finding patterns in complex datasets and turning them into clear, meaningful insights.
+🔬 Applying statistics and ML to real-world data  
+🌎 Exploring climate modeling and geospatial computer vision  
+📊 Communicating findings through clear visuals and concise reports
 
 ## 🛠️ Technical Skills
 
-**Programming & Data:** Python (Pandas, NumPy, scikit-learn), SQL, R (tidyverse, ggplot2)
+**Programming:** Python, SQL, R
 
-**Data Analytics:** Excel, Tableau, Power BI, Exploratory Data Analysis, Statistical Inference, Regression, Data Visualization
+**Data Analytics:** Excel, Tableau, Power BI, Exploratory Data Analysis, Data Visualization
 
-**Machine Learning:** Supervised Learning, Classification, Neural Networks, Autoencoders, Computer Vision, Model Validation, Hyperparameter Tuning
+**Machine Learning:** scikit-learn, PyTorch, Neural Networks, Computer Vision, Hyperparameter Tuning
 
 **Tools:** Git/GitHub, Jupyter Notebook, Linux/Unix
-
-
-
 
 ---
 

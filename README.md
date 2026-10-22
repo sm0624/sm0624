@@ -10,6 +10,14 @@
 
 📊 Turning data into stories, one pattern at a time.
 
+![Srinidhi's pastel purple introduction](https://capsule-render.vercel.app/api?type=rounded&color=EDE3FF&height=280&section=header&text=Hi,%20I'm%20Srinidhi!%20%F0%9F%91%8B&fontSize=35&fontColor=594477&fontAlignY=25&desc=Statistics%20student%20%40%20University%20of%20Washington%20%F0%9F%8E%93%0A%0A%F0%9F%93%8A%20Turning%20data%20into%20stories,%20one%20pattern%20at%20a%20time.&descSize=16&descAlignY=55&descAlign=50)
+
+🌷 Interested in discovering patterns, building machine learning models, and making complex data easier to understand.
+
+![Statistics](https://img.shields.io/badge/Statistics-E8DDF5?style=flat-square)
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-F8DFE8?style=flat-square)
+![Data Visualization](https://img.shields.io/badge/Data%20Visualization-E2F0E8?style=flat-square)
+
 ![Statistics](https://img.shields.io/badge/Statistics-E8DDF5?style=flat-square)
 ![Machine Learning](https://img.shields.io/badge/Machine%20Learning-F8DFE8?style=flat-square)
 ![Data Visualization](https://img.shields.io/badge/Data%20Visualization-E2F0E8?style=flat-square)

@@ -10,8 +10,6 @@
 
 📊 Turning data into stories, one pattern at a time.
 
-🌷 Interested in discovering patterns, building machine learning models, and making complex data easier to understand.
-
 ![Statistics](https://img.shields.io/badge/Statistics-E8DDF5?style=flat-square)
 ![Machine Learning](https://img.shields.io/badge/Machine%20Learning-F8DFE8?style=flat-square)
 ![Data Visualization](https://img.shields.io/badge/Data%20Visualization-E2F0E8?style=flat-square)

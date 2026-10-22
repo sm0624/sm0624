@@ -21,6 +21,9 @@ Analyzed NHL draft and player performance data to investigate how birth month, p
 
 ### A Cool Visualization I made!
 
+Exploring patterns in NHL draft data through 3D visualization.
+
+
 <img width="867" height="475" alt="Screenshot 2026-10-22 at 4 48 25 PM" src="https://github.com/user-attachments/assets/2ec7d677-a3a4-4977-acc4-8fdfda2d3b29" />
 
 

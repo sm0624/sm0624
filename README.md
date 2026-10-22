@@ -1,4 +1,10 @@
-# Hi, I'm Srinidhi! 👋
+<div align="center">
+
+<table>
+<tr>
+<td bgcolor="#F3ECFF" align="center">
+
+# 💜 Hi, I'm Srinidhi! 👋
 
 **Statistics student @ University of Washington** 🎓
 
@@ -10,6 +16,11 @@
 ![Machine Learning](https://img.shields.io/badge/Machine%20Learning-F8DFE8?style=flat-square)
 ![Data Visualization](https://img.shields.io/badge/Data%20Visualization-E2F0E8?style=flat-square)
 
+</td>
+</tr>
+</table>
+
+</div>
 ### ✿ A little about me
 
 - 📈 I enjoy finding patterns and turning data into meaningful insights.

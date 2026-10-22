@@ -12,7 +12,9 @@
   <br><br>
 
   <img src="https://img.shields.io/badge/Statistics-E8DDF5?style=for-the-badge" />
+  
   <img src="https://img.shields.io/badge/Machine%20Learning-F8DFE8?style=for-the-badge&logo=brain&logoColor=7A3E52" />
+  
   <img src="https://img.shields.io/badge/Data%20Visualization-E2F0E8?style=for-the-badge" />
 
 </p>

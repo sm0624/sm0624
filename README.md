@@ -4,7 +4,7 @@
 <tr>
 <td bgcolor="#F3ECFF" align="center">
 
-# 💜 Hi, I'm Srinidhi! 👋
+# Hi, I'm Srinidhi!
 
 **Statistics student @ University of Washington** 🎓
 

@@ -1,6 +1,6 @@
 ![Hi, I'm Srinidhi](https://capsule-render.vercel.app/api?type=rounded&color=EDE3FF&height=130&section=header&text=Hi,%20I'm%20Srinidhi!%20%F0%9F%91%8B&fontSize=32&fontColor=594477)
 
-```html
+
 <p align="center">
 
   <strong>Statistics Student @ University of Washington</strong> 🎓
@@ -16,7 +16,7 @@
   <img src="https://img.shields.io/badge/Data%20Visualization-E2F0E8?style=for-the-badge" />
 
 </p>
-```
+
 ---
 
 # 🌷 Srinidhi's Projects

@@ -1,24 +1,16 @@
 ![Hi, I'm Srinidhi](https://capsule-render.vercel.app/api?type=rounded&color=EDE3FF&height=130&section=header&text=Hi,%20I'm%20Srinidhi!%20%F0%9F%91%8B&fontSize=32&fontColor=594477)
 
-
 <p align="center">
-
   <strong>Statistics Student @ University of Washington</strong> 🎓
-
   <br><br>
-
   📊 Turning data into stories, one pattern at a time.
-
   <br><br>
-
-  <img src="https://img.shields.io/badge/Statistics-E8DDF5?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Machine%20Learning-F8DFE8?style=for-the-badge&logo=brain&logoColor=7A3E52" />
-  <img src="https://img.shields.io/badge/Data%20Visualization-E2F0E8?style=for-the-badge" />
-
+  <a href="#"><img src="https://img.shields.io/badge/Statistics-E8DDF5?style=flat-square" /></a>&nbsp;
+  <a href="#"><img src="https://img.shields.io/badge/Machine%20Learning-F8DFE8?style=flat-square&logo=brain&logoColor=7A3E52" /></a>&nbsp;
+  <a href="#"><img src="https://img.shields.io/badge/Data%20Visualization-E2F0E8?style=flat-square" /></a>
 </p>
 
 
----
 
 # 🌷 Srinidhi's Projects
 

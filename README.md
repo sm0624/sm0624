@@ -11,11 +11,11 @@
 
 <br>
 
-<img src="https://img.shields.io/badge/Statistics-E8DDF5?style=for-the-badge&labelColor=E8DDF5&color=E8DDF5" height="65" />
+<img src="https://img.shields.io/badge/📊_Statistics-E8DDF5?style=for-the-badge&labelColor=E8DDF5&color=E8DDF5" height="65" />
 &nbsp;
 <img src="https://img.shields.io/badge/🧠_Machine_Learning-F8DFE8?style=for-the-badge&labelColor=F8DFE8&color=F8DFE8" height="65" />
 &nbsp;
-<img src="https://img.shields.io/badge/Data_Visualization-E2F0E8?style=for-the-badge&labelColor=E2F0E8&color=E2F0E8" height="65" />
+<img src="https://img.shields.io/badge/📈_Data_Visualization-E2F0E8?style=for-the-badge&labelColor=E2F0E8&color=E2F0E8" height="65" />
 
 </div>
 

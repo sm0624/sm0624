@@ -37,24 +37,6 @@
 **Tools:** Git/GitHub, Jupyter Notebook, Linux/Unix
 
 ---
-## 🔬 Research Experience
-
-### 🌎 [Climate ML & Methane Modeling](./climate-ml-methane/)
-**Climate ML Research Intern · University of Washington**
-
-Applying autoencoders and machine learning to analyze climate data and model natural variability.
-
-### 🧊 [Geospatial Machine Learning](./glacial-feature-detection/)
-**Geospatial Machine Learning Intern · University of Washington**
-
-Using computer vision models to detect and map glacial landforms from geospatial imagery.
-
-### 📚 Statistics Directed Reading Program
-**Undergraduate Researcher · University of Washington · Winter 2025**
-
-Analyzed 1,600+ survey responses on Black women's experiences with policing using Python, regression, and data visualization.
-
----
 
 ## 🔬 Research Experience
 
@@ -87,8 +69,6 @@ Projects in regression, data analysis, and visualization, including:
 - [🩺 Infertility Conditional Regression](https://github.com/sm0624/sm0624/tree/main/infertility-conditional-regression)
 - [🎲 Say Yes to the Test](https://github.com/sm0624/sm0624/tree/main/say-yes-to-the-test)
 
----
----
 ---
 
 ### Let's Connect!

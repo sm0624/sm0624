@@ -1,0 +1,552 @@
+---
+title: 'STAT 311 Final Project '
+author: "Srinidhi Muralidharan"
+date: "`r Sys.Date()`"
+output:
+  pdf_document: 
+    fig_width: 5
+    fig_height: 3
+  html_document: 
+    fig_width: 5
+    fig_height: 3
+subtitle: "The Income Equation: How Life Factors Add Up"
+---
+
+
+```{r setup, include = FALSE}
+#load packages, read in your dataset if external to a package, 
+#and set global options. I have set all code chunks to not echo,
+#and to not print messages or warnings.  If you want to echo a particular code chunk to highlight something, you can do this individually for that code chunk.
+
+
+library(tidyverse)        #umbrella package
+library(janitor)          #for tables 
+library(openintro) #for the data
+library(tidymodels) 
+library(dplyr)
+library(ggplot2)
+library(GGally)              #for scatterplot matrices
+library(skimr)               #for quick summary/overview
+library(patchwork)
+
+knitr::opts_chunk$set( echo = FALSE,    
+                       message = FALSE,
+                       warning = FALSE)
+
+gss_subset <- read_csv(file = "sub-data.txt",
+                       na = c(".d", ".i", ".j",".m",".n",".p",".q",".r",".s",".u",".x",".y",".z"))
+
+```
+## Introduction
+
+Research has shown that factors like education, race, and lifestyle experiences can all play a role in shaping one’s income. For example, Card (1999) found that each additional year of schooling is linked to a significant increase in annual earnings. Pew Research Center (2023) reports that racial income differences remain significant, with Black and Hispanic households consistently earning less than White households. In addition, studies by Lyubomirsky, King, and Diener (2005) and Diener and Chan (2011) show a relationship between well-being factors like happiness and health status connecting to financial stability.
+
+Not only do factors like age and education impact income, life experiences such as political preference (being a liberal or conservative) and relationship satisfaction may also play important roles. While political ideology alone doesn't directly predict income or vice versa, some research suggests that political attitudes, especially liberal identification, can be influenced by a mix of socioeconomic factors like education and income (Pew Research Center, 2024; Evans & Tilley, 2020). These relationships can work both ways,just as income may shape political views, political beliefs may influence one’s career path, social circles, and even financial outcomes over time. So, our main question is how do lifestyle factors relate to household income?
+
+In this project, all of our data comes from the General Social Survey (GSS), which is a project of the independent research organization NORC at the University of Chicago, with principal funding from the National Science Foundation. We specifically selected data from the 1972-2022 Cumulative Datafile - Release 2 survey. 
+https://sda.berkeley.edu/sdaweb/analysis/?dataset=gss22rel2 
+
+Our selected variables are `age`, `race`, `educ`, `hapmar`, `contemp`, `happy`, `health`, and `coninc`. In general, the GSS collects data from people ages 18+ in the United States on a biannual basis, specifically from 1972 to 2022. We have included data from all years, regions, and surveys to examine the overall trends between lifestyle factors and household income.
+
+Our models use **household income** or `coninc` as the response variable and draws on a variety of predictors or explanatory variables, including both demographic and lifestyle variables. For numerical predictors, we are using **age** and years of **education**. For categorical predictors, we are using **general happiness**, **race**, **happiness in marriage**, and **health** which we believe correlate with one’s income.
+
+**Code Book**
+
+| Variables | Descriptions |
+|:------------|:-----------|
+| `age` | Numeric variable regarding age of the respondents. The values from 19-89.
+| `race`| Categorical variable regarding the race of the respondents. The values are either 1 for white, 2 for black, and 3 for other.
+| `educ`| Numerical variable that explains how many years of schooling that the respondents have from elementary to college. Values are from 0 to 20 years.
+|`hapmar`| Categorical variable that explains happiness in marriage. Variable takes  1 for "very happy", 2 is "pretty happy", 3 is "not too happy".
+| `coninc` | Numeric variable that regards family income of respondent in constant dollars. This variable can take any non-negative values as it's continuous.
+| `contemp` | Numeric variable that is classified as a "feeling thermometer" for conservative ideology. As the respondent hears names of a group, the respondent has to rate the group using a number from 0 to 100. 50 to 100 is a favorable outcome to the group while ratings between 0 to 50 means the respondent isn't favorable.
+| `happy` | Categorical variable that responds to how generally happy the respondent is. The values that the variable takes is 1 for "very happy", 2 for "pretty happy", 3 for "not too happy".
+| `health` | Categorical variable that explains the general health of the respondent in their own words. The values that the variable takes are 1 for "excellent", 2 for "good", 3 for "fair", 4 for "poor".
+
+**Skew in Coninc Variable**
+
+We would like to acknowledge that household income or `coninc` is right skewed with respondents having annual incomes less than $90,000 and very few respondents over that. However, this is logical because the majority of households earn moderate incomes, while only a small number of high-income earners are in the distribution’s tail to the right (U.S. Census Bureau, 2024).
+
+``` {r ex1}
+
+ggplot(data = gss_subset, mapping = aes(x = coninc)) +
+  geom_histogram(binwidth = ((180386.0 - 336.0)/log2(64913)), fill = "lightblue") +
+  labs(x = "Coninc", y = "Count", title = "Distribution of Household Income")
+
+```
+
+``` {r ex2}
+
+# Creating variable `happy_level` from variable `happy`
+gss_subset <- gss_subset %>% mutate(happy_level = ifelse(happy == 1, "very happy", ifelse(happy == 2, "pretty happy", "not too happy")))
+
+gss_subset <- gss_subset%>%
+  filter(!is.na(happy_level))
+
+
+# Creating variable `race_label` from variable `race`
+gss_subset <- gss_subset %>% 
+  mutate(race_label = ifelse(race == 1, "white", ifelse(race == 2, "black", "other")))
+
+gss_subset <- gss_subset%>%
+  filter(!is.na(race_label))
+
+
+
+# Creating variable `bach_complete` from variable `educ`
+gss_subset <- gss_subset %>%
+  mutate(bach_complete = ifelse(educ >= 16, "yes", "no"))
+
+gss_subset <- gss_subset%>%
+  filter(!is.na(bach_complete))
+
+# Creating variable hapmar
+
+gss_subset <- gss_subset %>% 
+  mutate(happy_married_label = ifelse(hapmar == 1, "very happy", ifelse(hapmar == 2, "pretty happy", "not too happy")))
+
+gss_subset <- gss_subset%>%
+  filter(!is.na(happy_married_label))
+
+# Creating variable "health_level"
+
+gss_subset <- gss_subset %>% 
+  mutate(health_label = ifelse(health == 1, "excellent", ifelse(health == 2, "good", ifelse(health == 3, "fair",ifelse(health == 4, "poor", NA)))))
+
+gss_subset <- gss_subset%>%
+  filter(!is.na(health))
+```
+
+## Section 2 - Model building
+
+**Splitting Data**
+
+We would like to mention that we will propose four models using the training split and evaluate them using the testing split. The training split data is  `data_train` and the testing split is `data_test`. 
+``` {r ex3}
+# Set the seed
+set.seed(2025)
+
+# Split the data into 80 & 20
+data_split <- initial_split(gss_subset, prop = 0.80)
+data_train <- training(data_split)
+data_test <- testing(data_split)
+
+
+```
+
+
+### Section 2.1
+
+
+I picked the explanatory variables `race` and `educ` for the response variable `coninc`. The reason I picked race is because based on recent studies, there is significant income disparities between races in the US. According to the US Bureau of Labor Statistics, White people make a household income on average of $75,000 while Black people make $48,871 yearly. With the data set, I grouped average household income for each race with a table. With this table, we can conclude that Black people make $14,507.28 less in household income than White people. Although the research study and the table I created use different data sets and display varying values, both clearly demonstrate that race is a significant factor in household income.
+
+**Average Income Table**
+``` {r srin1}
+# Average Income vs Race
+avg_income <- data_train %>%
+  group_by(race_label)%>%
+  summarise(mean_income = mean(coninc, na.rm = TRUE))
+
+avg_income
+```
+
+Next, it's common sense that people with more education tend to earn more money. For example, the Census estimates that in the first quarter of 2025, full-time workers aged 25 and over with at least a bachelor's degree had median weekly earnings of $1,754, while those with only a high school diploma earned $953 per week. Even though I had research to support my claim, I wanted to make sure that the data set we are using also confirms that education is a strong predictor of household income. So, I used bootstrapping to estimate how strong of a predictor education is to income by building a 95% confidence interval. With the bootstrap method, I found that with 100 bootstrap samples, the estimated increase in household income for every additional year of education is between $5,747 and $6,014 with 95% confidence. Since this interval does not include 0 in it, we can conclude that education is a statistically significant predictor of household income.
+
+**Bootstrap for Education**
+``` {r srin2}
+# Bootstrap Education
+
+set.seed(2006)
+
+education.df <- data_train %>% 
+                        specify(response = coninc, 
+                                 explanatory = educ) %>%
+                         generate(reps = 100, 
+                                  type = "bootstrap") %>%
+                         calculate(stat = "slope")
+
+
+education.df %>%
+  summarize(lower = quantile(stat, 0.025),
+  upper = quantile(stat, 0.975))
+
+
+```
+
+Lastly, the reason I chose `race` and `educ` together as explanatory variables was because according to research from the Census in 2022, 56% of White people are likely to obtain a bachelor's degree compared to 36% of Black people and 78% of Asians. With this information, I want to see how race and education are correlated in this data set. With a segmented bar plot, we can tell that Black people are less likely to obtain a bachelor's degree than White people or "other" which I presume is Asian, Hispanic, and mixed race people bundled together. In the segmented bar plot, "bach_complete" is a variable that represents if respondents have more than 16 years of education or a bachelor's degree. This variable is created through `educ`. Estimating a 0.12 difference between White people and Black people getting a bachelor's, we can assume that race has somewhat of an impact on education.
+
+``` {r srin3}
+# Segmented Bar Plot of Race vs Education
+
+ggplot(data =data_train,
+mapping = aes(x = race_label,
+fill = bach_complete )) +
+geom_bar(position = "fill") +
+labs( title = " Race versus bach_complete",
+subtitle = "How does race impact obtaining a bachelor's degree?", x = "Races",
+y = "Proportion")
+
+```
+
+**Income, Education, and Race Model Estimates**
+```{r srin4}
+
+# Mains Effects Model
+ier_mains_model <- lm(coninc ~ educ + race_label, data = data_train)
+
+tidy(ier_mains_model) %>% select(term, estimate)
+
+
+# Training adjusted R^2
+
+ier_model.rsq <- glance(ier_mains_model) %>% 
+                    select(adj.r.squared) %>% pull()
+
+
+# Testing RMSE Calculation
+
+ier_model_pred <- augment(ier_mains_model, newdata = data_test)
+
+ier_model.rmse <- ier_model_pred %>%
+  rmse(truth = coninc, estimate = .fitted) %>% pull()
+
+```
+**Model Equation**: coninc = -26808 + 5794*educ + 9083*race_labelother + 9345*race_labelwhite
+
+
+### Section 2.2
+
+Many factors influence income, but one of the most known contributors is education. According to the US Bureau of Labor Statistics, level of education by degree directly corresponds to weekly wage, and inversely relates to unemployment rate (Education Pays, 2024). I confirmed this by creating a scatter plot and finding the correlation constant R for the relationship between education and income, which was 0.471.
+
+``` {r kat1}
+
+# Plotting Education
+                                                                
+ggplot(data= data_train %>% filter(!is.na(contemp)), 
+       mapping=aes(x = educ, y = coninc)) +
+  geom_point(color = "black") +
+  geom_smooth(method = "lm", color = "green") + 
+  labs( x = "Education",
+        y = "Income",
+        title = "Education versus Income",
+        subtitle="Diagnostic")
+``` 
+
+``` {r kat2}
+
+# Correlation for Income & Education
+data_train %>% 
+  filter(!is.na(educ) & !is.na(coninc)) %>%
+  summarise(R = cor(coninc, educ))
+
+```
+
+This means that there is a moderate and somewhat significant correlation between education and income. 
+Knowing that there is precedent for variables with a relationship to income, I was interested in examining the relationship between income and other factors beyond education. Based on my own experiences speaking with people of varying political ideologies, it is widely considered that people who have liberal leaning views have less money than people with conservative views given that much of the conservative running platform relies on tax deduction and the liberal running platform boasts government aid. As such, I have made a scatterplot comparing conservative acceptance with income and calculated the correlation between income and conservative ideology.
+
+``` {r kat3}
+# Plotting contemp
+                                                                
+ggplot(data= data_train %>% filter(!is.na(contemp)), 
+       mapping=aes(x = contemp, y = coninc)) +
+  geom_point(color = "black") +
+  geom_smooth(method = "lm", color = "red") + 
+  labs( x = "Acceptance of Conservative Ideology",
+        y = "Income",
+        title = "Acceptance of Conservative Ideology versus Income",
+        subtitle="Diagnostic")
+
+
+``` 
+**Correlation for Income & Contemp**
+
+``` {r kat4}
+# Correlation for Income & Contemp
+data_train %>% 
+  filter(!is.na(contemp) & !is.na(coninc)) %>%
+  summarise(R = cor(coninc, contemp))
+```
+
+In this case, the correlation value is -0.00413, which is too small to be significant, meaning the relationship between opinions on conservative ideology and income is not significant or has no correlation.
+
+Another question that often comes up is: can money buy happiness? According to Forbes, the answer is yes, but only to a certain extent (Jennings, 2024). According to Jennings, middle and upper class people (> $75,000 annual income) were found to have the same happiness, but happiness increased with income before the middle class threshold. To examine this further, I created a box plot relating happiness and income.  
+
+``` {r kat5}
+
+# Plotting Happiness
+ggplot(data = data_train %>% filter(!is.na(happy_level) & !is.na(coninc)),
+       mapping=aes(x=coninc, fill=happy_level)) +
+  geom_boxplot() +
+  labs(title="Income by Happiness Level",
+       subtitle= "Diagnostic Plot",
+       x="Income (USD)",
+       fill="Happiness")+
+  theme(
+    axis.ticks.y=element_blank(),
+    axis.text.y=element_blank()
+  )
+
+```
+
+According to the boxplot above, the average income for very happy people is larger than the average income for pretty happy people, which is larger than the average income for not too happy people, which supports the Jennings study.
+
+But, do education, political ideology, and happiness have anything to do with each other? Despite seeming to be unrelated, all three of these topics are deeply influenced by each other. A study at Tufts University says conservatives are happier, and more educated (Levine, 2023), supported by conclusions from Junfeng Jiang who states that education is proportionally related to happiness.  However, due to the nonsignificant relationship between income and political ideology, I believe it is best to continue examining that relationship in a context beyond this project, so I chose to consider the relationship between income, education, and happiness in hopes of creating a stronger model.
+
+
+**Income, Education, and Happiness Model Estimates**
+```{r kat6}
+model_ihe <- lm(coninc ~ happy_level + educ, data = data_train)
+
+tidy(model_ihe) %>% select(term, estimate)
+
+model_ihe.rsq <- glance(model_ihe) %>% 
+                    select(adj.r.squared) %>% pull()
+
+model_ihe_pred <- augment(model_ihe, newdata  = data_test) 
+model_ihe.rmse <- model_ihe_pred %>% 
+                 rmse(truth = coninc, estimate = .fitted) %>% pull()
+```
+**Model Equation**: coninc = -25603.528	+ 6059.395*pretty happy + 10159.577*very happy + 5803.287*educ
+
+
+### Section 2.3
+
+For this analysis, I selected age, health, and income as key variables based on my box plots. Age was included since income often increases with experience but tends to decline after retirement, reflecting broader labor market trends (Autor, 2014). Health was chosen because higher health scores may correlate with greater financial stability, potentially due to consistent employment, access to healthcare, and educational advantages (Cutler & Lleras-Muney, 2006). Age and health serve as good explanatory variables to income.
+
+
+I used box plots to illustrate trends between health status, income, and age. The data shows that people in excellent health have a median age of around 35, while those in fair health hover closer to 50. Meanwhile, individuals in poor health tend to have a median age of about 65. In conclusion, health status coincides with how young or old you are. Looking at income versus health, people that responded with excellent or good health have a higher median income comparatively to fair and poor health statuses.
+
+``` {r hunter1}
+
+ #Boxplot of Age by Health
+
+ggplot(data = data_train, aes(x = health_label, y = age)) +
+  geom_boxplot(fill = "lightblue") +
+  labs(
+    title = "Age Distribution by Health Score",
+    subtitle = "Age across self-reported health groups",
+    x = "Self-Reported Health",
+    y = "Age")
+
+```
+
+``` {r hunter2}
+# Boxplot of Income by Health
+
+ggplot(data = data_train, aes(x = health_label, y = coninc)) +
+  geom_boxplot(fill = "lightgreen") +
+  labs(
+    title = "Income Distribution by Health Score",
+    subtitle = "Annual income across self-reported health groups",
+    x = "Self-Reported Health",
+    y = "Annual Income" )
+
+
+
+```
+
+
+Also, at first, we thought that as age goes up, income would also go up. This is because we believed age corresponds with working experience, assuming this experience should correlate with promotions and higher-paying jobs (Ashford, 2014). According to the scatterplot and the data, the linear regression shows a positive trend. However, this is not a strong relationship (correlation is 0.0221) from which we can draw a conclusion. The reason we think the data didn’t turn out the way we expected is that a large portion of the older population is retired. They have little to no income from their social security. This is the main reason why there wasn’t a real positive correlation, because it got balanced out by retirement. According to research, 61 percent of people aged 65 or older get half of their income from Social Security (American Psychological Association, 2010). Even though the scatterplot doesn't illustrate a significant positive trend, based on research from the  U.S. Census Bureau (2023), median earnings generally rise with age, peaking in the 45–54 age group. So, we decided to continue using age to predict household income.
+
+``` {r hunter3}
+
+# Scatterplot of Relationship between Income & Age
+
+data_train %>%
+  filter(!is.na(age) & !is.na(coninc) )%>%
+
+ggplot(data = data_train, mapping = aes(x = age, y = coninc)) +
+  geom_point(alpha = 0.4, color = "darkgrey") +  
+  geom_smooth(method = "lm", color = "darkred") + 
+  labs(
+    title = "Distribution of Household Income Across Age",
+    x = "Age",
+    y = "Household Income"
+  )
+
+
+``` 
+
+**Correlation between Age & Household Income**
+``` {r hunter4}
+data_train %>% 
+  filter(!is.na(coninc) & !is.na(age)) %>%
+  summarise(R = cor(age, coninc))
+
+``` 
+
+**Income, Age, and Health Model Estimates**
+``` {r hunter5}
+
+iah_model <- lm(coninc ~ age + health_label, data = data_train)
+
+tidy(iah_model) %>% select(term, estimate)
+ ###R squared
+
+iah_model.rsq <- glance(iah_model) %>%
+  select(adj.r.squared) %>%
+  pull()
+
+ ##Predcit on the test data and calculete RMSE
+iah_model_pred <- augment(iah_model, newdata = data_test)
+iah_model.rmse <- iah_model_pred %>%
+  rmse(truth = coninc, estimate = .fitted) %>%
+  pull()
+
+
+
+```
+**Model Equation:** coninc = 58870 + 183*age - 22711*health_labelfair - 8122*health_labelgood - 36235*health_labelpoor
+
+
+### Section 2.4
+
+I want to investigate the relationship between income, marriage satisfaction, and age. It would be interesting to investigate this to see if age and happiness in married life are predictors of income.
+
+There is a lot of data linking marriage and income. Many studies show how happiness in marriage can deeply influence household income and we want to see if it's a predictor of household income. From the table we made, it shows the three different categories of happiness and satisfaction in married life. The “not too happy,” “pretty happy,” and “very happy” categories each have their mean household income calculated. From the table, the least happily married respondents have the lowest income ($49,311.74), while the happiest have the highest average income ($60,022.64), indicating a $10,710.90 difference. This shows that the respondents that are more happily married seem to have higher average household incomes. This is backed up by research I found by Jacob (2021). In this research, it shows that from lower to upper class, happiness in marriage is related to income. As the class level increases—meaning they have more income—they are generally happier in marriage because of less economic stress.
+
+**Average Income vs Happily Married Levels**
+``` {r bond1}
+
+# Average Income vs Happily Married
+avg_income <- data_train %>%
+  group_by(happy_married_label)%>%
+  summarise(mean_income = mean(coninc, na.rm = TRUE))
+
+avg_income
+
+``` 
+
+It’s also pretty intuitive that income changes with age. People generally earn more as they gain experience, but eventually, income levels decline in retirement. Still, I wanted to test whether our data set actually supports this intuition. So, I used bootstrapping to estimate how much income changes with age by building a 95% confidence interval. After running 100 bootstrap samples, I found that for each additional year of age, household income is expected to increase between $25.71 and $88.75. Since this interval doesn’t include zero, we can conclude that age plays a statistically meaningful role in predicting income. More specifically, income tends to increase slightly as people get older, confirming our intuitions that income is expected to increase over the majority of our life. Overall, age and happiness in marriage is related to income.
+
+**Bootstrap Values**
+``` {r bond2}
+# Bootstrap Age
+
+set.seed(1111111)
+boot_slope_age.df <- data_train %>%
+  specify(response = coninc, explanatory = age) %>%
+  generate(reps = 100, type = "bootstrap") %>%
+  calculate(stat = "slope")
+
+boot_slope_age.df %>%
+  summarize(
+    lower = quantile(stat, 0.025),
+    upper = quantile(stat, 0.975)
+  )
+```
+
+**Income, Age, and Happiness in Marriage Model Estimates**
+``` {r bond3}
+
+# Linear Regression Model
+
+model_iahm <- lm(coninc ~ age + happy_married_label, data = data_train)
+
+tidy(model_iahm) %>% select(term, estimate)
+
+model_iahm.rsq <- glance(model_iahm) %>% 
+                    select(adj.r.squared) %>% pull()
+
+model_iahm_pred <- augment(model_iahm, newdata  = data_test) 
+model_iahm.rmse <- model_iahm_pred %>% 
+                 rmse(truth = coninc, estimate = .fitted) %>% pull()
+  
+```
+**Model Equation**: coninc = 46555 + 55*age + 6984*happy_married_labelprettyhappy + 10754*happy_married_labelveryhappy
+
+
+
+
+ **Models Table**
+
+| Model                  |  Training (adj) Rsquare| Testing RMSE
+|:-----------------------|:----------------------:| :---------:
+| `ier_mains_model`      |`r round(100 * ier_model.rsq, 2)` %| `r round(ier_model.rmse)`
+| `model_ihe`            |`r round(100 * model_ihe.rsq, 2)` %| `r round(model_ihe.rmse)`
+| `model_iahm`           |`r round(100 * model_iahm.rsq, 2)`%| `r round(model_iahm.rmse)`
+| `iah_model`            |`r round(100 * iah_model.rsq, 2)` %| `r round(iah_model.rmse)`
+
+
+## Section 3 - Results 
+
+Our original question was: how do lifestyle factors relate to household income? We have determined that the most influential combination of lifestyle factors on income is **education** and general **happiness** due to the relative strength of the model, compared to models relating income, education and race; income, age and health; and income, marriage happiness and age.
+ 
+ 
+Since adj R squared shows how well the model fits the data, while correcting for the number of variables used, a higher number indicates a better fit. RMSE is the root mean square error, so a smaller value represents a smaller error in the model, meaning smaller RMSEs correspond to better models. Based on this, the best model is `model_ihe`, with an adj Rsqare of 22.64% and RMSE of 3.5097^{4} since it has the highest adj Rsquare and second lowest RMSE of all of the generated models. `model_ihe` is the one relating income (`coninc`), education (`educ`), and happiness (`happy_level`). We picked this model with the second lowest RMSE of all the models because we decided based on both adj Rsquared as well as RMSE. Adj R^squared should be more informative when we are trying to understand relationships between variables than RMSE. Therefore, we picked the model with the best adj rsquared and second best RMSE. 
+
+The equation corresponding to `model_ihe` using the entire data set (gss_subset) is coninc = -25068.261 + 5863.010 happy_levelpretty happy + 9827.778happy_levelvery happy + 5775.297*educ. 
+
+Since happiness was measured as a categorical variable with three bins (very happy, pretty happy, not too happy) they are binary variables. If someone selects very happy, very happy = 1, and pretty happy = 0. The reverse also applies when someone is pretty happy. If someone selects not too happy, both pretty happy and very happy will equal 0. This means that if all else is held constant, and not too happy is selected, we predict that their income will not increase. If pretty happy is selected and all else remains constant, the person’s income is predicted to increase by a flat amount of $5,863.01. If very happy is indicated, and all else is held constant, income is predicted to increase by a flat amount of $9,827.78. As education is increased by a value of 1 year and all else is held constant, income increases by $5,775.30 If not very happy is selected, along with the person having 0 years of education, they are predicted to have an income of $-25,068.26. 
+
+**Final Model Estimates**
+``` {r final1}
+
+model_final <- lm(coninc ~ educ + happy_level, data = gss_subset)
+
+tidy(model_final) %>% select(term, estimate)
+
+```
+
+
+
+Similarly, when viewing the scatter plot, we can tell that even though all categories of `happy_level` had the same slope, "Very happy" (the blue line) starts with a higher intercept, indicating that at any level of education, people responding with "Very happy" have higher incomes.
+
+Overall this means that people who are very happy tend to have higher incomes than those who are not very happy or are pretty happy and income increases proportionally with years of education.
+
+```{r final2}
+
+gss_subset <- gss_subset %>%
+  filter(!is.na(educ), !is.na(coninc), !is.na(happy_level))
+
+ggplot(data = gss_subset,
+   mapping = aes(x = educ,
+                 y = coninc,
+                 color = happy_level) )+
+geom_point(alpha = 0.6)+ 
+  # not too happy
+geom_abline( slope =5775,      
+           intercept = -25068, 
+           color = "red")+  
+  
+  # pretty happy
+  
+geom_abline( slope = 5775,
+           intercept = -25068 +5863, 
+           color = "green") +     
+# very happy
+geom_abline( slope = 5775,
+           intercept = -25068 + 9828, 
+           color = "blue") +
+  
+  labs(x = "Years of Education", y = "Household Income", title = "Linear Model of Income vs Education by Happiness Level")
+```
+```
+
+
+
+## Bibliography
+
+Autor, D. H. (2014). Skills, education, and the rise of earnings inequality among the "other 99 percent". Science, 344(6186), 843–851. https://doi.org/10.1126/science.1251868
+
+Card, D. (1999). The causal effect of education on earnings. Handbook of Labor Economics, 3, 1801–1863. https://doi.org/10.1016/S1573-4463(99)03011-4
+
+Cutler, D. M., & Lleras-Muney, A. (2006). Education and health: Evaluating theories and evidence. NBER Working Paper No. 12352. https://www.nber.org/papers/w12352
+
+Diener, E., & Chan, M. Y. (2011). Happy people live longer: Subjective well-being contributes to health and longevity. Applied Psychology: Health and Well-Being, 3(1), 1–43. https://doi.org/10.1111/j.1758-0854.2010.01045.x
+
+Education pays. (2024, August 29). Bureau of Labor Statistics. https://www.bls.gov/emp/chart-unemployment-earnings-education.htm
+
+Evans, G., & Tilley, J. (2020). The intergenerational transmission of political ideology: Evidence from British longitudinal data. European Sociological Review, 36(1), 136–150. https://doi.org/10.1093/esr/jcz046
+
+Jennings, J. (2024, February 12). Does money buy happiness? Actually, yes. Forbes. https://www.forbes.com/sites/johnjennings/2024/02/12/money-buys-happiness-after-all/
+
+Lyubomirsky, S., King, L., & Diener, E. (2005). The benefits of frequent positive affect: Does happiness lead to success? Psychological Bulletin, 131(6), 803–855. https://doi.org/10.1037/0033-2909.131.6.803
+
+Marmot, M. (2005). Social determinants of health inequalities. The Lancet, 365(9464), 1099–1104. https://doi.org/10.1016/S0140-6736(05)71146-6
+
+Pew Research Center. (2023, March 1). Gender and racial pay gaps persist in the U.S. https://www.pewresearch.org/short-reads/2023/03/01/gender-and-racial-pay-gaps-persist-in-the-us/
+
+Pew Research Center. (2024, April 9). Partisanship by family income, home ownership, union membership and veteran status. https://www.pewresearch.org/politics/2024/04/09/partisanship-by-family-income-home-ownership-union-membership-and-veteran-status/
+
+U.S. Bureau of Labor Statistics. (2024, January 19). Median weekly earnings: $946 for workers with high school diploma, $1,533 for bachelor’s degree. The Economics Daily. https://www.bls.gov/opub/ted/2024/median-weekly-earnings-946-for-workers-with-high-school-diploma-1533-for-bachelors-degree.htm

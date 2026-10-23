@@ -1,6 +1,6 @@
 # 💍 Say Yes to the Test!
 
-**STAT 342 | Statistics Presentation Project**
+**STAT 342 | Statistics Presentation**
 
 Inspired by *Say Yes to the Dress*, this project turns hypothesis testing concepts into a fictional bridal-shop storyline featuring Randy and statistically significant drama.
 

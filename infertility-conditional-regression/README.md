@@ -36,11 +36,13 @@ How do previous miscarriages and abortions affect the odds of infertility in wom
 
 Conditional logistic regression is useful for matched case-control studies because it accounts for the matched structure and focuses on within-stratum comparisons. In this analysis, previous induced and spontaneous abortions were associated with higher odds of infertility.
 
-*These results describe associations in the analyzed dataset and do not establish causation.*
 
-## 👥 Authors
+<img width="554" height="368" alt="Screenshot 2026-10-22 at 9 43 05 PM" src="https://github.com/user-attachments/assets/c091dda9-1624-4d2c-bfe4-1016baa4d566" />
 
-Fiona Vo · **Srinidhi Muralidharan** · Zayna Badr
 
----
-*An academic project in statistical modeling, women's health, and regression analysis.* 📈
+
+
+
+
+
+

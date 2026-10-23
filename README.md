@@ -75,6 +75,6 @@ Projects in regression, data analysis, and visualization, including:
 
 <a href="mailto:srinidhi.murali24@gmail.com"><img src="https://img.shields.io/badge/Email-F2B8C6?style=for-the-badge&logo=gmail&logoColor=7A3E52" /></a>
 <a href="https://www.linkedin.com/in/srinidhimuralidharan24"><img src="https://img.shields.io/badge/LinkedIn-C5B8E8?style=for-the-badge&logo=linkedin&logoColor=4B3F72" /></a>
-<a href="https://github.com/YOUR_USERNAME?tab=repositories"><img src="https://img.shields.io/badge/My%20Projects-B8D8D0?style=for-the-badge&logo=github&logoColor=355E57" /></a>
+<a href="https://github.com/sm0624tab=repositories"><img src="https://img.shields.io/badge/My%20Projects-B8D8D0?style=for-the-badge&logo=github&logoColor=355E57" /></a>
 
 

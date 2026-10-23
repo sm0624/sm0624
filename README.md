@@ -44,10 +44,19 @@
 
 Applying autoencoders and machine learning to analyze climate data and model natural variability.
 
-### 🧊 [Geospatial Machine Learning](./glacial-feature-detection/)Using computer vision models to detect and map glacial landforms from geospatial imagery.
+### 🧊 [Geospatial Machine Learning](./glacial-feature-detection/)
 
-### 📊 Statistical Data Analysis
-Exploring datasets, identifying patterns, and communicating insights through statistical analysis and visualization.
+Using computer vision models to detect and map glacial landforms from geospatial imagery.
+
+### 📊 [Statistical Data Analysis](https://github.com/sm0624/sm0624/tree/main)
+
+Projects in regression, data analysis, and visualization, including:
+
+- [💰 Income Analysis](https://github.com/sm0624/sm0624/tree/main/income-analysis)
+- [🍫 Chocolate Sales Regression](https://github.com/sm0624/sm0624/tree/main/chocolate-sales)
+- [🏒 NHL Draft Analytics](https://github.com/sm0624/sm0624/tree/main/nhl-draft-analytics)
+- [🩺 Infertility Conditional Regression](https://github.com/sm0624/sm0624/tree/main/infertility-conditional-regression)
+- [🎲 Say Yes to the Test](https://github.com/sm0624/sm0624/tree/main/say-yes-to-the-test)
 
 ---
 

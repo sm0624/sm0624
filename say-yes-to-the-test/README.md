@@ -4,7 +4,7 @@
 
 Inspired by *Say Yes to the Dress*, this project turns hypothesis testing concepts into a fictional bridal-shop storyline featuring Randy and statistically significant drama.
 
-### What We Covered
+### What's Covered
 - **One-Sample Z-Test:** Testing whether the average wedding dress price exceeds $3,000
 - **One-Sample T-Test:** Repeating the price analysis using a sample standard deviation
 - **Paired T-Test:** Testing whether alterations increase dress prices

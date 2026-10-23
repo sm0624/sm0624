@@ -22,5 +22,5 @@ Analyzed General Social Survey (GSS) data from 1972–2022 to investigate how ed
 - Respondents reporting higher happiness levels tended to have higher predicted household incomes after accounting for education.
 
 ### Project Materials
-- [Final Report](Income-Analysis-Final-Report.pdf)
+- [Final Report](Income-Analysis-Report.pdf)
 

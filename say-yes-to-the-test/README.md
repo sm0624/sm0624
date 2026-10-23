@@ -19,6 +19,6 @@ Inspired by *Say Yes to the Dress*, this project turns hypothesis testing concep
 - Applying statistical methods to real-world-style scenarios
 
 ### Project Materials
-- [Presentation Slides (file:///Users/srinidhi/Documents/STAT%20342/Say%20Yes%20to%20the%20Test%20Project.pdf)
+- [Presentation Slides](file:///Users/srinidhi/Documents/STAT%20342/Say%20Yes%20to%20the%20Test%20Project.pdf)
 
 <img width="947" height="535" alt="Screenshot 2026-10-22 at 9 02 41 PM" src="https://github.com/user-attachments/assets/e0c18e61-0216-4bbe-84cb-d800666f7295" />

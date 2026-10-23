@@ -6,6 +6,9 @@
 
 As a Geospatial ML Intern with the University of Washington Glaciology Research Group, I developed computer vision workflows to identify **cirques, alcoves, and gullies** across Iceland's Tröllaskagi Peninsula. Using satellite imagery, digital elevation models (DEMs), and deep learning, this project explored ways to accelerate glacial feature mapping and support research on Earth's and Mars' glacial landscapes.
 
+<img width="348" height="496" alt="Screenshot 2026-10-22 at 9 51 37 PM" src="https://github.com/user-attachments/assets/c2b4a35f-c075-4a66-acbb-69a54b6c0b4d" />
+
+
 ## 🛠️ Methods & Technologies
 
 - 🗺️ **Geospatial Analysis:** ArcGIS Pro, satellite imagery, digital elevation models (DEMs)
@@ -21,6 +24,8 @@ As a Geospatial ML Intern with the University of Washington Glaciology Research 
 - Tuned model hyperparameters and analyzed training/validation loss and average precision to investigate detection performance.
 - Evaluated challenges in identifying small, narrow, and irregularly shaped glacial features and explored potential model improvements.
 - Automated geospatial analysis and processed model outputs using Python to support research workflows.
+
+<img width="629" height="402" alt="Screenshot 2026-10-22 at 9 51 47 PM" src="https://github.com/user-attachments/assets/1d484f79-a435-4a90-a9ad-5a6ae18ac938" />
 
 ## 🔬 Research Impact
 

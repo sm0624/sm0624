@@ -28,9 +28,7 @@ Automated glacial feature mapping can reduce manual annotation effort and help r
 
 ## 👥 Research Program
 
-**Opportunities in Glacier Investigation Program**  
+**Opportunities in Glacier Investigation Program (OGIVE)**  
 University of Washington · Summer 2025
 
 ---
-
-*Combining geospatial analysis, statistical thinking, and computer vision to study glacial landscapes.* 🧊

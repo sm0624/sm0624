@@ -50,7 +50,7 @@ Applying autoencoders and machine learning to analyze climate data and model nat
 
 Using computer vision models to detect and map glacial landforms from geospatial imagery.
 
-### 📚 Statistics Directed Reading Program
+### 📚 Applied Statistics Project Researcher
 **Undergraduate Researcher · University of Washington · Winter 2025**
 
 Analyzed 1,600+ survey responses on Black women's experiences with policing using Python, regression, and data visualization.

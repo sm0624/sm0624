@@ -21,7 +21,5 @@ Analyzed 3,013 global chocolate sales transactions from 2022–2024 to investiga
 - 📉 Final model adjusted \(R^2\): **0.0717**, indicating limited explanatory power.
 - 🌎 An Australia-only model achieved an \(R^2\) of approximately **0.1035**.
 
-## 🚀 Future Improvements
-- Explore additional predictors.
-- Develop country-specific models.
-- Evaluate predictive performance on held-out data.
+<img width="720" height="278" alt="Screenshot 2026-10-22 at 9 28 33 PM" src="https://github.com/user-attachments/assets/4ef45a32-0cec-4d15-9ff8-524b3f0ae0c1" />
+

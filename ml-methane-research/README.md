@@ -30,5 +30,3 @@ The ongoing goal is to develop a reliable, computationally efficient emulator th
 **In progress** — continuing model experiments, hyperparameter tuning, and evaluation of reconstruction performance.
 
 ---
-
-*Applying machine learning and statistical modeling to understand complex climate systems.* 🌎

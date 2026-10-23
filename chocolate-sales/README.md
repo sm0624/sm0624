@@ -25,9 +25,3 @@ Analyzed 3,013 global chocolate sales transactions from 2022–2024 to investiga
 - Explore additional predictors.
 - Develop country-specific models.
 - Evaluate predictive performance on held-out data.
-
-## 👥 Contributors
-Fiona Vo · **Srinidhi Muralidharan** · Zayna Badr
-
----
-*An academic project in statistical modeling and data visualization.* 📈

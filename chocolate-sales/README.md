@@ -19,6 +19,9 @@ Analyzed 3,013 global chocolate sales transactions from 2022–2024 to investiga
 - 🍫 Product and year were selected by all three stepwise regression methods.
 - 🔗 Interaction effects revealed relationships between product, country, and shipment size.
 
-<img width="353" height="264" alt="Screenshot 2026-10-22 at 9 30 27 PM" src="https://github.com/user-attachments/assets/b666400f-7248-4f43-8470-2bcc17bb4dd5" />
-
-<img width="349" height="249" alt="Screenshot 2026-10-22 at 9 30 36 PM" src="https://github.com/user-attachments/assets/96599ac7-b8c4-439b-b9a8-9e6eca2a4b8a" />
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/b666400f-7248-4f43-8470-2bcc17bb4dd5" width="350" alt="Chocolate sales distribution"></td>
+    <td><img src="https://github.com/user-attachments/assets/96599ac7-b8c4-439b-b9a8-9e6eca2a4b8a" width="350" alt="Chocolate sales boxplot"></td>
+  </tr>
+</table>

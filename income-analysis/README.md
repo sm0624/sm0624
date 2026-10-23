@@ -17,7 +17,7 @@ Analyzed General Social Survey (GSS) data from 1972–2022 to investigate how ed
 - **Model evaluation:** Adjusted R² and test-set RMSE
 
 ### Key Findings
-- The education and general happiness model performed best among the four models compared, achieving an adjusted R² of 22.64%.
+- The education and general happiness model performed best among the four models compared.
 - Each additional year of education was associated with approximately $5,775 higher predicted household income, holding happiness constant.
 - Respondents reporting higher happiness levels tended to have higher predicted household incomes after accounting for education.
 

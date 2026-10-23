@@ -1,31 +1,30 @@
 # 🧊 Glacial Feature Detection with Computer Vision
 
-🌎 Automating the identification and mapping of glacial landforms using geospatial data and deep learning.
+🌎 Using geospatial data and deep learning to automate the identification and mapping of glacial landforms in Iceland.
 
 ## 📌 Overview
 
-As a Geospatial ML Intern with the UW Glaciology Research Group, I developed computer vision workflows to identify **cirques, alcoves, and gullies** across Iceland's Tröllaskagi Peninsula. Using satellite imagery, digital elevation models (DEMs), and geospatial annotations, I explored how deep learning can accelerate glacial feature mapping and support research into Earth's and Mars' glacial landscapes.
+As a Geospatial ML Intern with the University of Washington Glaciology Research Group, I developed computer vision workflows to identify **cirques, alcoves, and gullies** across Iceland's Tröllaskagi Peninsula. Using satellite imagery, digital elevation models (DEMs), and deep learning, this project explored ways to accelerate glacial feature mapping and support research on Earth's and Mars' glacial landscapes.
 
 ## 🛠️ Methods & Technologies
 
 - 🗺️ **Geospatial Analysis:** ArcGIS Pro, satellite imagery, digital elevation models (DEMs)
-- 🤖 **Computer Vision:** Mask R-CNN, Faster R-CNN, Detectron2
+- 🤖 **Computer Vision:** Detectron2, Mask R-CNN, Faster R-CNN, YOLO
 - 🐍 **Programming:** Python, PyTorch
 - 🖥️ **High-Performance Computing:** UW Hyak, SLURM
-- ⚙️ **Model Optimization:** Learning rate tuning, anchor configuration, mask resolution
+- ⚙️ **Model Optimization:** Learning rates, anchor sizes, aspect ratios, mask resolution
 
 ## 📊 Key Contributions
 
-- Mapped **920+ glacial features**, including 349 cirques, 170 alcoves, and 401 gullies.
-- Created polygon annotations and training datasets for deep learning-based feature detection.
-- Trained and evaluated object detection models using ArcGIS Pro and Detectron2.
-- Investigated model performance through training and validation loss and average precision.
-- Explored model improvements for detecting small, narrow, and irregularly shaped glacial features.
-- Used UW's Hyak supercomputer to run Python-based model training experiments.
+- Mapped **920+ glacial features**, including **349 cirques, 170 alcoves, and 401 gullies**, to create structured training and evaluation datasets.
+- Trained and evaluated computer vision models using Detectron2 and other object detection frameworks on UW's Hyak supercomputer.
+- Tuned model hyperparameters and analyzed training/validation loss and average precision to investigate detection performance.
+- Evaluated challenges in identifying small, narrow, and irregularly shaped glacial features and explored potential model improvements.
+- Automated geospatial analysis and processed model outputs using Python to support research workflows.
 
 ## 🔬 Research Impact
 
-Automated glacial feature mapping can reduce manual effort and help researchers study landscape evolution and past glacial activity. This work also supports research comparing glacial landforms on Earth with similar features on Mars.
+Automated glacial feature mapping can reduce manual annotation effort and help researchers investigate landscape evolution and past glacial activity. This work also contributes to research comparing glacial landforms on Earth with similar features on Mars.
 
 ## 👥 Research Program
 
@@ -33,4 +32,5 @@ Automated glacial feature mapping can reduce manual effort and help researchers 
 University of Washington · Summer 2025
 
 ---
+
 *Combining geospatial analysis, statistical thinking, and computer vision to study glacial landscapes.* 🧊

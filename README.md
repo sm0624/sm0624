@@ -40,11 +40,11 @@
 
 ## My Projects
 
-### 🌎 Climate ML & Methane Modeling
+### 🌎 [Climate ML & Methane Modeling](./climate-ml-methane/)
+
 Applying autoencoders and machine learning to analyze climate data and model natural variability.
 
-### 🧊 Geospatial Machine Learning
-Using computer vision models to detect and map glacial landforms from geospatial imagery.
+### 🧊 [Geospatial Machine Learning](./glacial-feature-detection/)Using computer vision models to detect and map glacial landforms from geospatial imagery.
 
 ### 📊 Statistical Data Analysis
 Exploring datasets, identifying patterns, and communicating insights through statistical analysis and visualization.
